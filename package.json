@@ -1,0 +1,27 @@
+{
+  "name": "frontline",
+  "version": "0.9.0",
+  "description": "FRONTLINE — cinematic 3D tactical 1v1 shooter. Made by Usairam Hassan.",
+  "scripts": {
+    "dev": "vite --host",
+    "server": "node server/index.js",
+    "build": "vite build",
+    "start": "npm run build && node server/index.js",
+    "preview": "vite preview"
+  },
+  "author": "Usairam Hassan",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fontsource/barlow-condensed": "^5.1.0",
+    "@fontsource/inter": "^5.1.0",
+    "@fontsource/jetbrains-mono": "^5.1.0",
+    "gsap": "^3.12.5",
+    "three": "^0.169.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  },
+  "type": "module",
+  "private": true
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>FRONTLINE — One Arena. Two Fighters.</title>
+  <meta name="description" content="FRONTLINE — a cinematic 3D tactical 1v1 shooter. Unlock operators, master fictional weapons across four maps, online or against AI. Made by Usairam Hassan." />
+  <meta name="theme-color" content="#0a0b0d" />
+  <meta name="author" content="Usairam Hassan" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0b0d'/%3E%3Crect x='6' y='9' width='20' height='3' fill='%23e8a33d'/%3E%3Crect x='6' y='16' width='13' height='3' fill='%23e8a33d' opacity='.6'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <canvas id="gl" aria-hidden="true"></canvas>
+
+  <!-- ===== Cinematic presentation layer (scroll story) ===== -->
+  <div id="site">
+    <header class="site-nav">
+      <a class="brand" href="#intro"><span class="brand-mark"></span><span class="brand-name">FRONTLINE</span></a>
+      <nav class="site-links">
+        <a href="#arena">Arena</a><a href="#armory">Armory</a><a href="#operators">Operators</a><a href="#maps">Maps</a><a href="#play-section">Play</a>
+      </nav>
+      <button class="btn btn--primary btn--sm" data-enter="menu">Play now</button>
+    </header>
+    <div class="site-progress" aria-hidden="true"><i></i></div>
+
+    <section id="intro" class="sec sec-intro" data-section="intro">
+      <div class="sec-inner center">
+        <div class="eyebrow" data-reveal>A tactical 1v1 shooter</div>
+        <h1 class="h-display site-title" data-split>FRONTLINE</h1>
+        <p class="site-sub" data-reveal>One arena. Two fighters. No second chances.</p>
+        <div class="row center-row" data-reveal>
+          <button class="btn btn--primary btn--lg" data-enter="menu">Play now</button>
+          <a class="btn btn--lg" href="#arena">Watch the story</a>
+        </div>
+        <div class="site-credit-mini" data-reveal>Designed &amp; built by <strong>Usairam Hassan</strong></div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
+    </section>
+
+    <section id="arena" class="sec sec-tall" data-section="arena">
+      <div class="sticky">
+        <div class="sec-inner left">
+          <div class="eyebrow" data-reveal>01 · The arena</div>
+          <h2 class="h-display site-h2" data-split>Step onto the street</h2>
+          <p class="site-copy" data-reveal>Every match is a duel. One opponent, three lanes, a round clock and nowhere dry to hide. Read the angles, own the cover, and take the shot before they do.</p>
+          <div class="stat-row" data-reveal>
+            <div><b>1v1</b><span>Round-based duels</span></div>
+            <div><b>4</b><span>Handcrafted maps</span></div>
+            <div><b>7</b><span>Fictional weapons</span></div>
+            <div><b>4</b><span>Operators</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="armory" class="sec sec-xtall" data-section="armory">
+      <div class="sticky">
+        <div class="sec-inner right">
+          <div class="eyebrow" data-reveal>02 · The armory</div>
+          <h2 class="h-display site-h2" data-split>Every weapon speaks differently</h2>
+          <div class="showcase panel" data-reveal>
+            <div class="row"><span class="tag amber" id="w-cat">ASSAULT RIFLE</span><span class="grow"></span><span class="mono small muted" id="w-idx">01 / 07</span></div>
+            <div class="showcase-name" id="w-name">VK-7 WARDEN</div>
+            <p class="small" id="w-blurb"></p>
+            <div class="col" id="w-stats" style="gap:8px"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="operators" class="sec sec-xtall" data-section="operators">
+      <div class="sticky">
+        <div class="sec-inner left">
+          <div class="eyebrow blue" data-reveal>03 · Operators</div>
+          <h2 class="h-display site-h2" data-split>Four specialists. One purpose each.</h2>
+          <div class="showcase panel" data-reveal>
+            <div class="row"><span class="tag blue" id="o-role">RECON</span><span class="grow"></span><span class="mono small muted" id="o-idx">01 / 04</span></div>
+            <div class="showcase-name" id="o-name">VOLT</div>
+            <p class="small" id="o-bio"></p>
+            <div class="ability-line"><span class="eyebrow" id="o-ab">OVERDRIVE</span><p class="small" id="o-abd"></p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="maps" class="sec sec-xtall" data-section="maps">
+      <div class="sticky">
+        <div class="sec-inner right">
+          <div class="eyebrow" data-reveal>04 · Battlegrounds</div>
+          <h2 class="h-display site-h2" data-split>Every map tells a story</h2>
+          <div class="showcase panel" data-reveal>
+            <div class="row"><span class="mono small amber-t" id="m-idx">MAP 01</span><span class="grow"></span><span class="mono small muted" id="m-time"></span></div>
+            <div class="showcase-name" id="m-name">NEON DISTRICT</div>
+            <div class="map-tag" id="m-tag"></div>
+            <p class="small" id="m-desc"></p>
+            <div id="m-plan"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="play-section" class="sec sec-tall" data-section="play">
+      <div class="sticky">
+        <div class="sec-inner center">
+          <div class="eyebrow" data-reveal>05 · Deploy</div>
+          <h2 class="h-display site-title" data-split>Enter the arena</h2>
+          <p class="site-sub" data-reveal>Practice offline against a tactical AI, or take on a real opponent online.</p>
+          <div class="row center-row" data-reveal>
+            <button class="btn btn--primary btn--lg" data-enter="menu">Enter the arena</button>
+            <button class="btn btn--lg" data-enter="bots">Play vs bots</button>
+            <button class="btn btn--lg" data-enter="quick">Quick match</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="credits-section" class="sec sec-credits" data-section="credits">
+      <div class="sec-inner center">
+        <div class="eyebrow" data-reveal>Credits</div>
+        <div class="creator-mark big" data-reveal>Made by <span>Usairam Hassan</span></div>
+        <p class="site-copy center-t" data-reveal>Concept, design, development and direction. A browser-native tactical shooter built with Three.js, Web Audio, GSAP and Node.js.</p>
+        <div class="row center-row" data-reveal><button class="btn btn--primary" data-enter="menu">Play FRONTLINE</button></div>
+        <div class="site-footer">FRONTLINE · All operators, weapons and locations are fictional · © Usairam Hassan</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== Game application ===== -->
+  <div id="app" class="hidden"></div>
+  <div id="fade"></div>
+  <noscript><p style="color:#eee;padding:24px;font-family:sans-serif">FRONTLINE requires JavaScript and WebGL.</p></noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
